@@ -16,6 +16,7 @@ self:   prep
 
 deps:   rmdeps
 	@GOPATH=$(GOPATH) go get -u "github.com/whosonfirst/go-whosonfirst-export"
+	mv src/github.com/whosonfirst/go-whosonfirst-export/vendor/github.com/tidwall src/github.com/
 
 vendor-deps: deps
 	if test -d vendor; then rm -rf vendor; fi

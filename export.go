@@ -2,51 +2,26 @@ package export
 
 import (
 	"encoding/json"
-	"github.com/aaronland/go-artisanal-integers"
-	brooklyn_integers "github.com/aaronland/go-brooklynintegers-api"
-	wof_export "github.com/whosonfirst/go-whosonfirst-export"	
+	wof_export "github.com/whosonfirst/go-whosonfirst-export"
+	wof_exporter "github.com/whosonfirst/go-whosonfirst-export/exporter"
+	wof_options "github.com/whosonfirst/go-whosonfirst-export/options"
 )
 
-type Feature struct {
-	Type       string      `json:"type"`
-	Id         int64       `json:"id"`
-	Properties interface{} `json:"properties"`
-	Bbox       interface{} `json:"bbox,omitempty"`
-	Geometry   interface{} `json:"geometry"`
+type SFOMuseumExporter struct {
+	wof_exporter.Exporter
+	options wof_options.Options
 }
 
-type ExportOptions struct {
-	Strict        bool
-	IntegerClient artisanalinteger.Client
-}
+func NewSFOMuseumExporter(opts wof_options.Options) (wof_exporter.Exporter, error) {
 
-func DefaultExportOptions() (*ExportOptions, error) {
-
-	bi_client := brooklyn_integers.NewAPIClient()
-
-	opts := ExportOptions{
-		Strict:        true,
-		IntegerClient: bi_client,
-	}
-
-	return &opts, nil
-}
-
-type FeatureExporter struct {
-	wof_export.Exporter
-	options *ExportOptions
-}
-
-func NewExporter(opts *ExportOptions) (wof_export.Exporter, error) {
-
-	ex := FeatureExporter{
+	ex := SFOMuseumExporter{
 		options: opts,
 	}
 
 	return &ex, nil
 }
 
-func (ex *FeatureExporter) ExportFeature(feature interface{}) ([]byte, error) {
+func (ex *SFOMuseumExporter) ExportFeature(feature interface{}) ([]byte, error) {
 
 	body, err := json.Marshal(feature)
 
@@ -57,7 +32,7 @@ func (ex *FeatureExporter) ExportFeature(feature interface{}) ([]byte, error) {
 	return ex.Export(body)
 }
 
-func (ex *FeatureExporter) Export(feature []byte) ([]byte, error) {
+func (ex *SFOMuseumExporter) Export(feature []byte) ([]byte, error) {
 
 	var err error
 
@@ -76,10 +51,10 @@ func (ex *FeatureExporter) Export(feature []byte) ([]byte, error) {
 	return feature, nil
 }
 
-func Prepare(feature []byte, opts *ExportOptions) ([]byte, error) {
+func Prepare(feature []byte, opts wof_options.Options) ([]byte, error) {
 
 	var err error
-	
+
 	feature, err = wof_export.Prepare(feature, opts)
 
 	if err != nil {
@@ -87,6 +62,6 @@ func Prepare(feature []byte, opts *ExportOptions) ([]byte, error) {
 	}
 
 	// SFO Museum properties go here
-	
+
 	return feature, nil
 }

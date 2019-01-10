@@ -1,12 +1,13 @@
 package export
 
 import (
+	"bytes"
 	"encoding/json"
-	"github.com/aaronland/go-artisanal-integers"
-	brooklyn_integers "github.com/aaronland/go-brooklynintegers-api"
 	"github.com/tidwall/gjson"
 	"github.com/tidwall/pretty"
+	"github.com/whosonfirst/go-whosonfirst-export/options"
 	"github.com/whosonfirst/go-whosonfirst-export/properties"
+	"io"
 )
 
 type Feature struct {
@@ -17,82 +18,38 @@ type Feature struct {
 	Geometry   interface{} `json:"geometry"`
 }
 
-type ExportOptions struct {
-	Strict        bool
-	IntegerClient artisanalinteger.Client
-}
-
-func DefaultExportOptions() (*ExportOptions, error) {
-
-	bi_client := brooklyn_integers.NewAPIClient()
-
-	opts := ExportOptions{
-		Strict:        true,
-		IntegerClient: bi_client,
-	}
-
-	return &opts, nil
-}
-
-type Exporter interface {
-	Export([]byte) ([]byte, error)
-	ExportFeature(interface{}) ([]byte, error)
-}
-
-type FeatureExporter struct {
-	Exporter
-	options *ExportOptions
-}
-
-func NewExporter(opts *ExportOptions) (Exporter, error) {
-
-	ex := FeatureExporter{
-		options: opts,
-	}
-
-	return &ex, nil
-}
-
-func (ex *FeatureExporter) ExportFeature(feature interface{}) ([]byte, error) {
-
-	body, err := json.Marshal(feature)
-
-	if err != nil {
-		return nil, err
-	}
-
-	return ex.Export(body)
-}
-
-func (ex *FeatureExporter) Export(feature []byte) ([]byte, error) {
+func Export(feature []byte, opts options.Options, wr io.Writer) error {
 
 	var err error
 
-	feature, err = Prepare(feature, ex.options)
+	feature, err = Prepare(feature, opts)
 
 	if err != nil {
-		return nil, err
+		return err
 	}
 
-	feature, err = Format(feature, ex.options)
+	feature, err = Format(feature, opts)
 
 	if err != nil {
-		return nil, err
+		return err
 	}
 
-	return feature, nil
+	r := bytes.NewReader(feature)
+	_, err = io.Copy(wr, r)
+
+	return err
 }
 
-func Prepare(feature []byte, opts *ExportOptions) ([]byte, error) {
+func Prepare(feature []byte, opts options.Options) ([]byte, error) {
 
 	var err error
 
-	feature, err = properties.EnsureWOFId(feature, opts.IntegerClient)
+	feature, err = properties.EnsureWOFId(feature, opts.UIDProvider())
 
 	if err != nil {
 		return nil, err
 	}
-	
+
 	feature, err = properties.EnsureRequired(feature)
 
 	if err != nil {
@@ -104,7 +61,6 @@ func Prepare(feature []byte, opts *ExportOptions) ([]byte, error) {
 	if err != nil {
 		return nil, err
 	}
-	
 
 	feature, err = properties.EnsureParentId(feature)
 
@@ -135,11 +91,11 @@ func Prepare(feature []byte, opts *ExportOptions) ([]byte, error) {
 	if err != nil {
 		return nil, err
 	}
-	
+
 	return feature, nil
 }
 
-func Format(feature []byte, opts *ExportOptions) ([]byte, error) {
+func Format(feature []byte, opts options.Options) ([]byte, error) {
 
 	// see also:
 	// https://github.com/tidwall/pretty/issues/2

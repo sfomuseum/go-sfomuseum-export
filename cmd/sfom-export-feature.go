@@ -3,7 +3,8 @@ package main
 import (
 	"flag"
 	"fmt"
-	"github.com/sfomuseum/go-sfomuseum-export"
+	"github.com/sfomuseum/go-sfomuseum-export"	
+	"github.com/whosonfirst/go-whosonfirst-export/options"
 	"io/ioutil"
 	"log"
 	"os"
@@ -27,13 +28,13 @@ func main() {
 			log.Fatal(err)
 		}
 
-		opts, err := export.DefaultExportOptions()
+		opts, err := options.NewDefaultOptions()
 
 		if err != nil {
 			log.Fatal(err)
 		}
 
-		ex, err := export.NewExporter(opts)
+		ex, err := export.NewSFOMuseumExporter(opts)
 
 		if err != nil {
 			log.Fatal(err)
