@@ -4,7 +4,7 @@ import (
 	"flag"
 	"fmt"
 	"github.com/sfomuseum/go-sfomuseum-export"	
-	"github.com/whosonfirst/go-whosonfirst-export/options"
+	_ "github.com/whosonfirst/go-whosonfirst-export/options"
 	"io/ioutil"
 	"log"
 	"os"
@@ -28,7 +28,7 @@ func main() {
 			log.Fatal(err)
 		}
 
-		opts, err := options.NewDefaultOptions()
+		opts, err := export.NewDefaultOptions()
 
 		if err != nil {
 			log.Fatal(err)

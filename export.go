@@ -12,6 +12,11 @@ type SFOMuseumExporter struct {
 	options wof_options.Options
 }
 
+func NewDefaultOptions() (wof_options.Options, error) {
+	
+	return wof_options.NewDefaultOptions()
+}
+
 func NewSFOMuseumExporter(opts wof_options.Options) (wof_exporter.Exporter, error) {
 
 	ex := SFOMuseumExporter{
