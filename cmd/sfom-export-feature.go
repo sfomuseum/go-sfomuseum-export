@@ -3,7 +3,7 @@ package main
 import (
 	"flag"
 	"fmt"
-	"github.com/sfomuseum/go-sfomuseum-export"	
+	"github.com/sfomuseum/go-sfomuseum-export"
 	_ "github.com/whosonfirst/go-whosonfirst-export/options"
 	"io/ioutil"
 	"log"

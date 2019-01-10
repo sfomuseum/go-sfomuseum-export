@@ -2,6 +2,7 @@ package export
 
 import (
 	"encoding/json"
+	"github.com/sfomuseum/go-sfomuseum-export/properties"
 	wof_export "github.com/whosonfirst/go-whosonfirst-export"
 	wof_exporter "github.com/whosonfirst/go-whosonfirst-export/exporter"
 	wof_options "github.com/whosonfirst/go-whosonfirst-export/options"
@@ -13,7 +14,7 @@ type SFOMuseumExporter struct {
 }
 
 func NewDefaultOptions() (wof_options.Options, error) {
-	
+
 	return wof_options.NewDefaultOptions()
 }
 
@@ -66,7 +67,17 @@ func Prepare(feature []byte, opts wof_options.Options) ([]byte, error) {
 		return nil, err
 	}
 
-	// SFO Museum properties go here
+	feature, err = properties.EnsurePlacetype(feature)
+
+	if err != nil {
+		return nil, err
+	}
+
+	feature, err = properties.EnsureIsSFO(feature)
+
+	if err != nil {
+		return nil, err
+	}
 
 	return feature, nil
 }
