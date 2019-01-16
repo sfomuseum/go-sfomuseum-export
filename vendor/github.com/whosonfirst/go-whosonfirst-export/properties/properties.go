@@ -43,10 +43,11 @@ func EnsureGeom(feature []byte) ([]byte, error) {
 		return nil, err
 	}
 
-	// TO DO
-	// geom:latitude
-	// geom:longitude
-	// geom:bbox
+	feature, err = EnsureGeomCoords(feature)
+
+	if err != nil {
+		return nil, err
+	}
 
 	return feature, nil
 }
