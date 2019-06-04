@@ -4,7 +4,7 @@ Go package for exporting SFO Museum specific Who's On First documents.
 
 ## Important
 
-Too soon. Move along.
+Work in progress. This works, until it doesn't.
 
 ## See also
 
