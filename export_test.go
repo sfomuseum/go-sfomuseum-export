@@ -1,11 +1,11 @@
 package export
 
 import (
-	_ "github.com/whosonfirst/go-whosonfirst-export/options"
+	"fmt"
 	"github.com/tidwall/gjson"
+	_ "github.com/whosonfirst/go-whosonfirst-export/options"
 	"io/ioutil"
 	"os"
-	"fmt"
 	"path/filepath"
 	"testing"
 )
@@ -42,11 +42,11 @@ func TestExport(t *testing.T) {
 	}
 
 	ex, err := NewSFOMuseumExporter(ex_opts)
-	
+
 	if err != nil {
 		t.Fatal(err)
 	}
-	
+
 	body, err = ex.Export(body)
 
 	if err != nil {
@@ -60,10 +60,10 @@ func TestExport(t *testing.T) {
 	}
 
 	for _, prop := range ensure_props {
-		
+
 		prop_rsp := gjson.GetBytes(body, prop)
-		
-		if !prop_rsp.Exists(){
+
+		if !prop_rsp.Exists() {
 			t.Fatalf("Missing property '%s'", prop)
 		}
 
@@ -76,5 +76,5 @@ func TestExport(t *testing.T) {
 	if bbox_str != "-122.384119,37.615457,-122.384119,37.615457" {
 		t.Fatal("Unexpected geom:bbox")
 	}
-	
+
 }
