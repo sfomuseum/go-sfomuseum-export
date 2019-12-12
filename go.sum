@@ -1,7 +1,13 @@
 github.com/aaronland/go-artisanal-integers v0.1.0 h1:WN00aqbjfElOD8dUngFMOdd9wEWW0vyitnOMSRaNqsk=
 github.com/aaronland/go-artisanal-integers v0.1.0/go.mod h1:00F0qOpuZZkzWiSSEQYk6Ul1Oc5kwgcYgsfYRmuR+wY=
+github.com/aaronland/go-artisanal-integers v0.1.1 h1:bLQmWqcqgPT1NOJFwJtZZ9O/QTnttO54ODiWIVuOW1Y=
+github.com/aaronland/go-artisanal-integers v0.1.1/go.mod h1:ZTeFI+Ck+q+Dp11Htld5aU6V+YwEzxzprsBO0t9GPp8=
 github.com/aaronland/go-brooklynintegers-api v1.0.1 h1:HrEo98HD5YOfC/slzkROCxMuZTeCpT3srf1G+eO9sX8=
 github.com/aaronland/go-brooklynintegers-api v1.0.1/go.mod h1:aZ4tIFeMdAQRSLZYfGdAiDeBWUHDQkFdqZ9091mk8H8=
+github.com/aaronland/go-brooklynintegers-api v1.1.0 h1:eyoSZjn3Qiy79H+1rG/HtkEShNBZkPUWs4YKpFWkuD8=
+github.com/aaronland/go-brooklynintegers-api v1.1.0/go.mod h1:agceH8JW8PcdHGCyKEDmOntccB3m7xUKrUejHpxAs6U=
+github.com/aaronland/go-roster v0.0.1 h1:r1l4n1HfWvEtOXZvhfXX0Won9Xf6QJsigdUdzOtuy/M=
+github.com/aaronland/go-roster v0.0.1/go.mod h1:AcovpxlG1XxJxX2Fjqlm63fEIBhCjEIBV4lP87FZDmI=
 github.com/akrylysov/algnhsa v0.0.0-20190319020909-05b3d192e9a7/go.mod h1:HhzjNA0EjUWcwHTUMwqrpeAdIF3gRmpH0HpWx1hYJSc=
 github.com/andreyvit/diff v0.0.0-20170406064948-c7f18ee00883/go.mod h1:rCTlJbsFo29Kk6CurOXKm700vrz8f0KW0JNfpkRJY/8=
 github.com/aws/aws-lambda-go v1.9.0/go.mod h1:zUsUQhAUjYzR8AuduJPCfhBuKWUaDbQiPOG+ouzmE1A=
@@ -46,6 +52,8 @@ github.com/whosonfirst/go-whosonfirst-export v0.1.0 h1:TyweYI1wFG3oOl66F7/az73QU
 github.com/whosonfirst/go-whosonfirst-export v0.1.0/go.mod h1:X5JQYFJrgzjY5rANRBmY0BAmPbIy63jQDOvljqvBJiA=
 github.com/whosonfirst/go-whosonfirst-export v0.1.1 h1:N2eXZH4rH3zDWBSIwYsFy1ROKe3twd82kTYc8JnnLj8=
 github.com/whosonfirst/go-whosonfirst-export v0.1.1/go.mod h1:WUei94AxfPppqom4s7Y3VVTV2o6NsGjdpCaR+zyD89s=
+github.com/whosonfirst/go-whosonfirst-export v0.1.2 h1:7NncfM1VdX0d8b30/uLLt3zN8HraYY4Xvbi2yAuUBRo=
+github.com/whosonfirst/go-whosonfirst-export v0.1.2/go.mod h1:P7sAJi9D10i6XydqkHwmFoRFCSogBlRxzUkaVy5vqew=
 golang.org/x/tools v0.0.0-20180221164845-07fd8470d635/go.mod h1:n7NCudcB/nEzxVGmLbDWY5pfWTLqBcC2KZ6jyYvM4mQ=
 golang.org/x/tools v0.0.0-20181030221726-6c7e314b6563/go.mod h1:n7NCudcB/nEzxVGmLbDWY5pfWTLqBcC2KZ6jyYvM4mQ=
 gopkg.in/check.v1 v0.0.0-20161208181325-20d25e280405/go.mod h1:Co6ibVJAznAaIkqp8huTwlJQCZ016jof/cbN4VW5Yz0=
