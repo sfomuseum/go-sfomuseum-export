@@ -18,6 +18,11 @@ func NewDefaultOptions() (Options, error) {
 		return nil, err
 	}
 
+	return NewDefaultOptionsWithProvider(provider)
+}
+
+func NewDefaultOptionsWithProvider(provider id.Provider) (Options, error) {
+
 	opts := DefaultOptions{
 		id_provider: provider,
 	}
