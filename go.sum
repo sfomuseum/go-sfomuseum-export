@@ -47,6 +47,8 @@ github.com/pmezard/go-difflib v1.0.0/go.mod h1:iKH77koFhYxTK1pcRnkKkqfTogsbg7gZN
 github.com/sergi/go-diff v1.0.0/go.mod h1:0CfEIISq7TuYL3j771MWULgwwjU+GofnZX9QAmXWZgo=
 github.com/sfomuseum/go-edtf v0.2.1 h1:wIbFlBK5jbqQOR3D79iTB+dZTBcs7DPFigPPimgkepg=
 github.com/sfomuseum/go-edtf v0.2.1/go.mod h1:1rP0EJZ/84j3HO80vGcnG2T9MFBDAFyTNtjrr8cv3T4=
+github.com/sfomuseum/go-edtf v0.2.2 h1:8n1UekTCU6fkgAf3bWqG5RyQxOd9hRhy4lg91aQ3kMk=
+github.com/sfomuseum/go-edtf v0.2.2/go.mod h1:1rP0EJZ/84j3HO80vGcnG2T9MFBDAFyTNtjrr8cv3T4=
 github.com/stretchr/objx v0.1.0/go.mod h1:HFkY916IF+rwdDfMAkV7OtwuqBVzrE8GR6GFx+wExME=
 github.com/stretchr/testify v1.3.0 h1:TivCn/peBQ7UY8ooIcPgZFpTNSz0Q2U6UrFlUfqbe0Q=
 github.com/stretchr/testify v1.3.0/go.mod h1:M5WIy9Dh21IEIfnGCwXGc5bZfKNJtfHm1UVUgZn+9EI=
@@ -86,6 +88,8 @@ github.com/whosonfirst/go-whosonfirst-export v0.3.0 h1:+Ub2G9QXY6ZXhfAnfLnf1dbC1
 github.com/whosonfirst/go-whosonfirst-export v0.3.0/go.mod h1:UO/uZcV+kGoDZPYKSb05Yj28e1sk4r8aQvCyIjBQOxc=
 github.com/whosonfirst/go-whosonfirst-export v0.3.4 h1:/09Ny6HIOpPAzqCIPIOVplwekSbCTSA/wi7wJU4lwmI=
 github.com/whosonfirst/go-whosonfirst-export v0.3.4/go.mod h1:y3FiLZ95MVzfE4OyPm2aWzZ7Uld74FrsQbjhFKEwgL8=
+github.com/whosonfirst/go-whosonfirst-export v0.3.5 h1:OjWTF1Wt6OGvKAGl7VtuljdGhQG8Daay7VMx2k9NCis=
+github.com/whosonfirst/go-whosonfirst-export v0.3.5/go.mod h1:XmkUCwpzlHNUWURdOeWcDrDQlWmdNe09lIvVIzrpYCI=
 github.com/whosonfirst/go-whosonfirst-format v0.3.0 h1:PEhduZdcTBYynvIQPARBTkEQ8csJnipLgILq/F98o/0=
 github.com/whosonfirst/go-whosonfirst-format v0.3.0/go.mod h1:OVt+Nc3jg+XIcrOuWHPvA3Vz4eEJ6uBzwlFlIdw4+Ak=
 github.com/whosonfirst/go-whosonfirst-id v0.0.2 h1:MYtBPYtOND/KSLYeaoURWyh2OkyVqwpOXSuNj9vNf9Q=
