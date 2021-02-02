@@ -1,9 +1,10 @@
 package export
 
 import (
+	"context"
 	"fmt"
 	"github.com/tidwall/gjson"
-	_ "github.com/whosonfirst/go-whosonfirst-export/options"
+	wof_export "github.com/whosonfirst/go-whosonfirst-export/v2"
 	"io/ioutil"
 	"os"
 	"path/filepath"
@@ -11,6 +12,8 @@ import (
 )
 
 func TestExport(t *testing.T) {
+
+	ctx := context.Background()
 
 	cwd, err := os.Getwd()
 
@@ -35,13 +38,7 @@ func TestExport(t *testing.T) {
 		t.Fatal(err)
 	}
 
-	ex_opts, err := NewDefaultOptions()
-
-	if err != nil {
-		t.Fatal(err)
-	}
-
-	ex, err := NewSFOMuseumExporter(ex_opts)
+	ex, err := wof_export.NewExporter(ctx, "sfomuesum://")
 
 	if err != nil {
 		t.Fatal(err)
