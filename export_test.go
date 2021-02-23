@@ -38,13 +38,13 @@ func TestExport(t *testing.T) {
 		t.Fatal(err)
 	}
 
-	ex, err := wof_export.NewExporter(ctx, "sfomuesum://")
+	ex, err := wof_export.NewExporter(ctx, "sfomuseum://")
 
 	if err != nil {
 		t.Fatal(err)
 	}
 
-	body, err = ex.Export(body)
+	body, err = ex.Export(ctx, body)
 
 	if err != nil {
 		t.Fatal(err)
