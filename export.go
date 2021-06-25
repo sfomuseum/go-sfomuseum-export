@@ -33,5 +33,11 @@ func Prepare(feature []byte, opts *wof_export.Options) ([]byte, error) {
 		return nil, err
 	}
 
+	feature, err = properties.EnsureWOFDepicts(feature)
+
+	if err != nil {
+		return nil, err
+	}
+	
 	return feature, nil
 }

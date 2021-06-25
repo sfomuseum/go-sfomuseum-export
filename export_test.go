@@ -53,6 +53,7 @@ func TestExport(t *testing.T) {
 	ensure_props := []string{
 		"properties.wof:id",
 		"properties.geom:bbox",
+		"properties.wof:depicts",
 		"bbox",
 	}
 
