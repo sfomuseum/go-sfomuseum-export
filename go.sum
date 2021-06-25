@@ -95,6 +95,8 @@ github.com/tidwall/gjson v1.6.8/go.mod h1:zeFuBCIqD4sN/gmqBzZ4j7Jd6UcA2Fc56x7QFs
 github.com/tidwall/gjson v1.7.4/go.mod h1:5/xDoumyyDNerp2U36lyolv46b3uF/9Bu6OfyQ9GImk=
 github.com/tidwall/gjson v1.7.5 h1:zmAN/xmX7OtpAkv4Ovfso60r/BiCi5IErCDYGNJu+uc=
 github.com/tidwall/gjson v1.7.5/go.mod h1:5/xDoumyyDNerp2U36lyolv46b3uF/9Bu6OfyQ9GImk=
+github.com/tidwall/gjson v1.8.0 h1:Qt+orfosKn0rbNTZqHYDqBrmm3UDA4KRkv70fDzG+PQ=
+github.com/tidwall/gjson v1.8.0/go.mod h1:5/xDoumyyDNerp2U36lyolv46b3uF/9Bu6OfyQ9GImk=
 github.com/tidwall/match v1.0.1 h1:PnKP62LPNxHKTwvHHZZzdOAOCtsJTjo6dZLCwpKm5xc=
 github.com/tidwall/match v1.0.1/go.mod h1:LujAq0jyVjBy028G1WhWfIzbpQfMO8bBZ6Tyb0+pL9E=
 github.com/tidwall/match v1.0.3 h1:FQUVvBImDutD8wJLN6c5eMzWtjgONK9MwIBCOrUJKeE=
@@ -115,6 +117,8 @@ github.com/tidwall/sjson v1.1.5 h1:wsUceI/XDyZk3J1FUvuuYlK62zJv2HO2Pzb8A5EWdUE=
 github.com/tidwall/sjson v1.1.5/go.mod h1:VuJzsZnTowhSxWdOgsAnb886i4AjEyTkk7tNtsL7EYE=
 github.com/tidwall/sjson v1.1.6 h1:8fDdlahON04OZBlTQCIatW8FstSFJz8oxidj5h0rmSQ=
 github.com/tidwall/sjson v1.1.6/go.mod h1:KN3FZ7odvXIHPbJdhNorK/M9lWweVUbXsXXhrJ/kGOA=
+github.com/tidwall/sjson v1.1.7 h1:sgVPwu/yygHJ2m1pJDLgGM/h+1F5odx5Q9ljG3imRm8=
+github.com/tidwall/sjson v1.1.7/go.mod h1:w/yG+ezBeTdUxiKs5NcPicO9diP38nk96QBAbIIGeFs=
 github.com/tomtaylor/go-whosonfirst-format v0.2.0 h1:UD/kP2dFApJFkgo/gGC08/7t018bP7PHQreDVoTYLTs=
 github.com/tomtaylor/go-whosonfirst-format v0.2.0/go.mod h1:fjMnbCrPWx3EHMHWoyqH12A/nxAvWbdIPHjXBMteDm4=
 github.com/whosonfirst/algnhsa v0.1.0/go.mod h1:swLBXxaVTv3s6dJLhekdQCuCTshUew+xHjptRC21RG0=
@@ -139,6 +143,8 @@ github.com/whosonfirst/go-whosonfirst-export/v2 v2.0.0 h1:xxrZUyNOAuMeNrUvXgQtTS
 github.com/whosonfirst/go-whosonfirst-export/v2 v2.0.0/go.mod h1:hLZ4MkFDW5hy1hskAkWp41ix49f0/euccCMFO1d29m0=
 github.com/whosonfirst/go-whosonfirst-export/v2 v2.3.0 h1:lgjoKIDSFu110++cQaqsQnHahU4cU6y0liGiSfihUAI=
 github.com/whosonfirst/go-whosonfirst-export/v2 v2.3.0/go.mod h1:ec4uJ6eXFuGhD80THlh9kb5iZTCw6x8uNRdS/7Fl4BE=
+github.com/whosonfirst/go-whosonfirst-export/v2 v2.3.1 h1:NVzXfQ5e/szXXXHoD16ctqPOYyO65B3pEDV2NG55fyI=
+github.com/whosonfirst/go-whosonfirst-export/v2 v2.3.1/go.mod h1:ec4uJ6eXFuGhD80THlh9kb5iZTCw6x8uNRdS/7Fl4BE=
 github.com/whosonfirst/go-whosonfirst-format v0.3.0 h1:PEhduZdcTBYynvIQPARBTkEQ8csJnipLgILq/F98o/0=
 github.com/whosonfirst/go-whosonfirst-format v0.3.0/go.mod h1:OVt+Nc3jg+XIcrOuWHPvA3Vz4eEJ6uBzwlFlIdw4+Ak=
 github.com/whosonfirst/go-whosonfirst-id v0.0.2 h1:MYtBPYtOND/KSLYeaoURWyh2OkyVqwpOXSuNj9vNf9Q=
