@@ -32,12 +32,17 @@ func EnsureWOFDepicts(feature []byte) ([]byte, error) {
 	depicts := make([]int64, 0)
 
 	for id, _ := range depicts_map {
+
+		if id <= 0 {
+			continue
+		}
+
 		depicts = append(depicts, id)
 	}
 
 	if len(depicts) == 0 {
 		return feature, nil
 	}
-	
+
 	return sjson.SetBytes(feature, "properties.wof:depicts", depicts)
 }

@@ -38,6 +38,6 @@ func Prepare(feature []byte, opts *wof_export.Options) ([]byte, error) {
 	if err != nil {
 		return nil, err
 	}
-	
+
 	return feature, nil
 }
