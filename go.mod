@@ -5,7 +5,7 @@ go 1.22
 require (
 	github.com/tidwall/gjson v1.17.1
 	github.com/tidwall/sjson v1.2.5
-	github.com/whosonfirst/go-whosonfirst-export/v2 v2.8.0
+	github.com/whosonfirst/go-whosonfirst-export/v2 v2.8.1
 )
 
 require (

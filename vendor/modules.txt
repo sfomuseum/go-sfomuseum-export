@@ -63,7 +63,7 @@ github.com/tidwall/pretty
 # github.com/tidwall/sjson v1.2.5
 ## explicit; go 1.14
 github.com/tidwall/sjson
-# github.com/whosonfirst/go-whosonfirst-export/v2 v2.8.0
+# github.com/whosonfirst/go-whosonfirst-export/v2 v2.8.1
 ## explicit; go 1.22
 github.com/whosonfirst/go-whosonfirst-export/v2
 github.com/whosonfirst/go-whosonfirst-export/v2/properties
