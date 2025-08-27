@@ -45,7 +45,7 @@ func TestSFOMuseumExport(t *testing.T) {
 		t.Fatal(err)
 	}
 
-	body, err = ex.Export(ctx, body)
+	_, body, err = ex.Export(ctx, body)
 
 	if err != nil {
 		t.Fatal(err)
