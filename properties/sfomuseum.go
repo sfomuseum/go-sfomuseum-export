@@ -2,7 +2,7 @@ package properties
 
 import (
 	"errors"
-	
+
 	"github.com/tidwall/gjson"
 	"github.com/tidwall/sjson"
 )
@@ -18,7 +18,7 @@ func EnsurePlacetype(feature []byte) ([]byte, error) {
 	pt_alt := []string{
 		rsp.String(),
 	}
-	
+
 	return sjson.SetBytes(feature, "wof:placetype_alt", pt_alt)
 }
 

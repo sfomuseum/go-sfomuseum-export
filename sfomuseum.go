@@ -2,14 +2,13 @@ package export
 
 import (
 	"context"
-	"encoding/json"
-	
-	wof_export "github.com/whosonfirst/go-whosonfirst-export/v2"
+
+	// "github.com/whosonfirst/go-whosonfirst-format"
+	wof_export "github.com/whosonfirst/go-whosonfirst-export/v3"
 )
 
 type SFOMuseumExporter struct {
 	wof_export.Exporter
-	options *wof_export.Options
 }
 
 func init() {
@@ -24,46 +23,17 @@ func init() {
 }
 
 func NewSFOMuseumExporter(ctx context.Context, uri string) (wof_export.Exporter, error) {
-
-	opts, err := wof_export.NewDefaultOptions(ctx)
-
-	if err != nil {
-		return nil, err
-	}
-
-	ex := &SFOMuseumExporter{
-		options: opts,
-	}
-
+	ex := &SFOMuseumExporter{}
 	return ex, nil
 }
 
-func (ex *SFOMuseumExporter) ExportFeature(ctx context.Context, feature interface{}) ([]byte, error) {
+func (ex *SFOMuseumExporter) Export(ctx context.Context, feature []byte) (bool, []byte, error) {
 
-	body, err := json.Marshal(feature)
-
-	if err != nil {
-		return nil, err
-	}
-
-	return ex.Export(ctx, body)
-}
-
-func (ex *SFOMuseumExporter) Export(ctx context.Context, feature []byte) ([]byte, error) {
-
-	var err error
-
-	feature, err = Prepare(feature, ex.options)
+	feature, err := PrepareFeature(ctx, feature)
 
 	if err != nil {
-		return nil, err
+		return false, nil, err
 	}
 
-	feature, err = wof_export.Format(feature, ex.options)
-
-	if err != nil {
-		return nil, err
-	}
-
-	return feature, nil
+	return wof_export.Export(ctx, feature)
 }
