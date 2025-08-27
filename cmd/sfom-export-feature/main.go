@@ -4,12 +4,13 @@ import (
 	"bytes"
 	"context"
 	"flag"
-	_ "github.com/sfomuseum/go-sfomuseum-export/v2"
-	"github.com/whosonfirst/go-whosonfirst-export/v2"
 	"io"
 	"io/ioutil"
 	"log"
 	"os"
+
+	_ "github.com/sfomuseum/go-sfomuseum-export/v3"
+	"github.com/whosonfirst/go-whosonfirst-export/v3"
 )
 
 func main() {
@@ -44,7 +45,7 @@ func main() {
 			log.Fatalf("Failed to read '%s', %v", path, err)
 		}
 
-		pretty, err := ex.Export(ctx, body)
+		_, pretty, err := ex.Export(ctx, body)
 
 		if err != nil {
 			log.Fatalf("Failed to export '%s', %v", path, err)
